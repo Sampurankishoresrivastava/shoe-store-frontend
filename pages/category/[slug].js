@@ -10,6 +10,7 @@ const Category = ({ category, products, slug }) => {
     const [pageIndex, setPageIndex] = useState(1);
     const { query } = useRouter();
 
+    
     useEffect(() => {
         setPageIndex(1);
     }, [query]);
