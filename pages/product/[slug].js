@@ -203,6 +203,7 @@ export async function getStaticPaths() {
     };
 }
 
+// `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps({ params: { slug } }) {
     const product = await fetchDataFromApi(
         `/api/products?populate=*&filters[slug][$eq]=${slug}`
