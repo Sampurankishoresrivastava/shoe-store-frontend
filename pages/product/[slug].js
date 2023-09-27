@@ -189,7 +189,6 @@ export async function getStaticPaths() {
             slug: p.attributes.slug,
         },
     }));
-
     return {
         paths,
         fallback: false,
