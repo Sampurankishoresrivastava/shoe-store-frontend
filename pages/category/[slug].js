@@ -10,7 +10,6 @@ const Category = ({ category, products, slug }) => {
     const [pageIndex, setPageIndex] = useState(1);
     const { query } = useRouter();
 
-    
     useEffect(() => {
         setPageIndex(1);
     }, [query]);
@@ -97,11 +96,13 @@ export async function getStaticPaths() {
             slug: c.attributes.slug,
         },
     }));
+
     return {
         paths,
         fallback: false,
     };
 }
+
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps({ params: { slug } }) {
     const category = await fetchDataFromApi(
